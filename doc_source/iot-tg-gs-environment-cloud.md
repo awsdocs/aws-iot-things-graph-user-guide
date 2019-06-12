@@ -20,37 +20,12 @@ This must have a trust relationship with AWS IoT Things Graph\. The following in
 
 1. In the IAM console \([https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\), choose **Roles**, and then choose **Create Role**\.
 
-1. On the **Choose the service that will use this role** page, choose **Lambda**, and then choose **Next: Permissions**\.
+1. On the **Choose the service that will use this role** page, choose **IoT Things Graph**, and then choose **Next: Permissions**\.
 
 1. On the **Attach permissions policies** page, choose policies that contain permissions that your flows require\. All flows require read\-write permissions to AWS IoT, and the example flows in this section require read permission to AWS Lambda\. Choose **Next: Tags**\.
 
 1. On the **Add tags \(optional\)** page, add optional tags that help you categorize your role\. Choose **Next: Review**\.
 
 1. On the **Create role** page, enter a name for your role\. Choose **Create role**\.
-
-1. On the **Roles** page, choose the role you just created\.
-
-1. On the **Summary** page, choose **Trust relationships**, and then choose **Edit trust relationship**\.
-
-1. On the **Edit trust relationship** page, replace the policy document with the following\. This creates a trust relationship with AWS IoT Things Graph\.
-
-   ```
-   {
-     "Version": "2012-10-17",
-     "Statement": [
-       {
-         "Effect": "Allow",
-         "Principal": {
-           "Service": [
-             "iotthingsgraph.amazonaws.com"
-           ]
-         },
-         "Action": "sts:AssumeRole"
-       }
-     ]
-   }
-   ```
-
-1. Choose **Update Trust Policy**\.
 
 After you create this role, copy the role ARN so that you can use it when you create cloud flow configurations\.

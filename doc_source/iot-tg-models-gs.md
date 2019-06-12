@@ -196,7 +196,7 @@ aws iotthingsgraph associate-entity-to-thing --thing-name DeviceB --entity-id "u
 1. On the **Select device model** page, choose the device to associate with your thing\. Then choose **Associate**\.  
 ![\[Choose the device to associate with your thing and then choose Associate.\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGSelectDeviceModel.png)
 
-1. On the **Things** page, verify that your device and thing are associated\.  
+1. On the **Things** page, reload the page and verify that your device and thing are associated\.  
 ![\[Verify that the device is associated with the thing.\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGVerifyAssociate.png)
 
 1. Repeat steps 2 and 3 for **ThingB** and any other things you want to associate with devices\.

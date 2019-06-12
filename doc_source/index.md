@@ -91,4 +91,5 @@ Amazon's trademarks and trade dress may not be used in
       + [Deployments](iot-tg-models-tdm-iot-sdc.md)
          + [Deployment](iot-tg-models-tdm-iot-sdc-deployconfig.md)
 + [Tagging Your AWS IoT Things Graph Resources](tagging-tg.md)
++ [AWS CloudFormation Support for AWS IoT Things Graph](cloudformation-support.md)
 + [Glossary](iot-tg-glossary.md)

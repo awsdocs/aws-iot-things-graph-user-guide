@@ -89,7 +89,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Create a flow\.
 
-   In the **Flow configuration** pane, name your flow \(such as **SecurityFlow**\)\.  
+   In the **Flow configuration** pane, name your flow \(such as **SecurityFlow**\)\. Choose **Create flow**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowConfig2.png)
 
 1. Add the device models to the flow\.
