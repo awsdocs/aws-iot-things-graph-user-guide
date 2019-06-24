@@ -17,7 +17,7 @@ AWS IoT Things Graph then performs the following actions on these two resources:
 + Subscribes the AWS IoT Things Graph connector and the devices to the MQTT topics specified in the device definitions\.
 
 **Note**  
-You must create a **thingsgraph** directory at the root of your AWS IoT Greengrass core device\. Deployments to your core device won't work if this directory doesn't exist\. If your AWS IoT Greengrass core is using a Unix\-like operating system, at a command prompt enter **sudo chmod 777 /thingsgraph** after creating this directory\. Don't modify the files that are put in this directory\.
+You must create a **thingsgraph** directory at the root of your AWS IoT Greengrass core device\. Deployments to your core device won't work if this directory doesn't exist\. Don't modify the files that are put in this directory\. For more information on setting up your AWS IoT Greengrass core, see [Setting Up Your Environment for AWS IoT Greengrass Deployments](iot-tg-gs-environment.html)\.
 
 After your first deployment of a flow configuration to your AWS IoT Greengrass core device, AWS IoT Things Graph deploys the AWS IoT Things Graph connector to your AWS IoT Greengrass core device\. AWS IoT Things Graph also installs a database file named **ThingsGraph\.db** and a directory named **engine** to the **thingsgraph** directory that you created when you set up your AWS IoT Greengrass core\.
 

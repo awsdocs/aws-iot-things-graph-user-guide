@@ -6,7 +6,7 @@
 
  A namespace is the repository for entities \(for example, models\) created using the AWS IoT Things Graph Data Modeling \(TDM\) language\. These entities are associated with a specific account\. The namespace is part of the URN for each entity\. 
 
-When you [upload TDM entities](iot-tg-models-gs.html) for the first time AWS IoT Things Graph creates a namespace for you\. The namespace consists of your AWS Region, your account ID, and a fixed suffix `default`\. The pattern is *REGION*/*ACCOUNT ID*/`default`\. For example, a TDM entity created in the `us-west-2` region looks like this: `us-west-2/012345678910/default`\.
+When you [upload TDM entities](iot-tg-models-gs.html) for the first time, AWS IoT Things Graph creates a namespace for you\. The namespace consists of your AWS Region, your account ID, and a fixed suffix `default`\. The pattern is *REGION*/*ACCOUNT ID*/`default`\. For example, a TDM entity created in the `us-west-2` region looks like this: `us-west-2/012345678910/default`\.
 
 You can extend the path under `default` to organize your entities\. For example, you could place your device definitions under `default/devices` and your property definitions under `default/properties`\.
 

@@ -16,6 +16,11 @@ Some of these models are available in the AWS IoT Things Graph console\. Each to
 + [Raspberry Pi Camera \(for Amazon Rekognition\)](iot-tg-examples-rpicamerarkgn.html)
 + [Raspberry Pi Screen](iot-tg-examples-rpiscreen.html)
 
+**Device Definitions \(Modbus\)**
++ [HW\-Group Damocles Mini](iot-tg-examples-damocles.html)
++ [CoolAutomation CoolMasterNet](iot-tg-examples-coolmaster.html)
++ [Deuta AL\-511\-00 IP\-DALI\-BRIDGE V2](iot-tg-examples-dali.html)
+
 **Service Definitions**
 + [Rekognition](iot-tg-examples-rekognition.html)
 + [getS3Lambda](iot-tg-examples-gets3lambda.html)

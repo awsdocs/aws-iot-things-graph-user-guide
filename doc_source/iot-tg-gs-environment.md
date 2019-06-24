@@ -23,7 +23,13 @@ To perform the tasks related to setting up your AWS IoT Greengrass core, you nee
 
    Follow the instructions in [Deploy Cloud Configurations to an AWS IoT Greengrass Core Device](https://docs.aws.amazon.com/greengrass/latest/developerguide/configs-core.html) to start AWS IoT Greengrass\.
 
-1. Create a directory named **thingsgraph** at the root directory of your AWS IoT Greengrass core device\. AWS IoT Things Graph installs files in this location\. The AWS IoT Things Graph logs go into the `/greengrass/ggc/var/log/user/us-east-1/ThingsGraph/` directory\. For information about how to configure AWS IoT Greengrass logs, see [Monitoring with AWS IoT Greengrass Logs](https://docs.aws.amazon.com/greengrass/latest/developerguide/greengrass-logs-overview.html)\.
+1. Create a directory named **thingsgraph** at the root directory of your AWS IoT Greengrass core device\. AWS IoT Things Graph installs files in this location\. This directory must have read, write, and execute permissions for `ggc_user`\. If your AWS IoT Greengrass core is using a Unix\-like operating system, set these permissions by entering the following commands at a command prompt\.
+
+   `sudo chown ggc_user: /thingsgraph`
+
+   `sudo chmod 700 /thingsgraph`
+
+   The AWS IoT Things Graph logs go into the `/greengrass/ggc/var/log/user/us-east-1/ThingsGraph/` directory\. For information about how to configure AWS IoT Greengrass logs, see [Monitoring with AWS IoT Greengrass Logs](https://docs.aws.amazon.com/greengrass/latest/developerguide/greengrass-logs-overview.html)\.
 
 1. Create an [IAM role for AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/latest/developerguide/config-iam-roles.html) and attach the policies that your flows will need to interact with other AWS services when they're running\. 
 

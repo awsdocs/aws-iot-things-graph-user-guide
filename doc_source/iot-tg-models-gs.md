@@ -2,13 +2,13 @@
 
 --------
 
-# Creating and Uploading Models<a name="iot-tg-models-gs"></a>
+# Creating and Uploading Entities<a name="iot-tg-models-gs"></a>
 
 Creating entities for a flow involves three main tasks: defining the entities \(including the devices\) in the flow, uploading the entities to your private namespace, and associating things in your registry with the devices that you've defined and uploaded\. This topic describes how to complete these tasks by using either the AWS CLI or the AWS IoT Things Graph console\.
 
 ## Step 1\. Define the Entities<a name="iot-tg-models-gs-step1"></a>
 
-The following GraphQL contains a complete definition of entities that compose the flow described in [Working with Flows](iot-tg-workflows.html)\. 
+The following GraphQL contains a complete definition of entities that compose the flow described in [Working with Flows](iot-tg-workflows.html)\. \(For an overview of how GraphQL is used in the Things Graph Data Model \(TDM\), see [AWS IoT Things Graph Data Model and GraphQL](iot-tg-models-tdm-graphql.html)\.
 
 These definitions create a barcode reader and another device that logs the reader output, with all of the TDM entities that compose the devices\.
 

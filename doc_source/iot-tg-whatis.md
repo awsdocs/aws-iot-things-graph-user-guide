@@ -32,15 +32,15 @@ There are three key concepts in AWS IoT Things Graph: **model**, **mapping**, an
 
 Device and service models are representations of the agents that interact in a flow\. Device and service models generically define the attributes, inputs, and outputs of the devices and services that interact with each other in flows\. AWS IoT Things Graph enables you to define device and service interactions without considering the low\-level implementations of devices produced by different manufacturers\.
 
-**Mapping**
-
-A mapping provides information that enables AWS IoT Things Graph to convert the output message of one device into the expected format for the next device in the flow\. Mappings bridge differences between the devices and enable them to work together\. Mappings enable you to build IoT applications that use a variety of devices from different manufacturers\.
-
 **Flow**
 
 A flow \(or workflow\) consists of [device models](iot-tg-models-tdm-iot-device-model.html) and [services](iot-tg-models-tdm-iot-service.html)\. Flows deﬁne how the devices and services interact with each other after a triggering event occurs\. A flow lists these interactions as a sequence of steps\. Each step contains an action on a device or web service and the related inputs to and outputs from that action\. The ﬂow deﬁnes the logical interactions and orders of execution between the devices and services\.
 
 For more information, see [How a Flow Works](iot-tg-whatis-howitworks.html)\.
+
+**Mapping**
+
+A mapping provides information that enables AWS IoT Things Graph to convert the output message of one device into the expected format for the next device in the flow\. Mappings bridge differences between the devices and enable them to work together\. Mappings enable you to build IoT applications that use a variety of devices from different manufacturers\.
 
 ## How AWS IoT Things Graph Works<a name="iot-tg-whatis-works"></a>
 
@@ -50,7 +50,7 @@ Follow these steps to create and deploy an AWS IoT Things Graph flow\.
 
 ### Step 1: Build a Flow<a name="iot-tg-what-is-works-step1"></a>
 
-On the home page of the AWS IoT Things Graph console, choose **Create flow**\. Build your flow by dragging device and web service models from the model library into a flow designer\. \(You can also find this page by choosing the menu icon at the upper left of the page, and then choosing **Flows**\.\) 
+Build your flow by dragging device and web service models from the model library into a flow designer\. \(You can also find this page by choosing the menu icon at the upper left of the page, and then choosing **Flows**\.\) 
 
 The model library contains models that AWS IoT Things Graph has made publicly available \(public models\), and the models that you created \(private models\)\. Private models are visible only to you\. Define interactions by connecting the model outputs with appropriate inputs of other models\. Choose **Publish** to save your flow and publish it to the list of flows that can be deployed\.
 
@@ -82,7 +82,7 @@ When you create your flow configuration, select things from your registry that c
 
 ### Step 3: Deploy<a name="iot-tg-what-is-works-step3"></a>
 
-After you configure your deployment, deploy the application to the cloud or to AWS IoT Greengrass\-enabled devices for local execution\. 
+After you configure your deployment, deploy the application to the cloud or to AWS IoT Greengrass\-enabled devices\. 
 
 AWS IoT Things Graph packages up the flow and its dependencies and pushes them either to the cloud or to the AWS IoT Greengrass\-enabled device\. AWS IoT Things Graph then manages interactions between locally connected devices\.
 
@@ -90,8 +90,8 @@ AWS IoT Things Graph packages up the flow and its dependencies and pushes them e
 
 ## How Do I Get Started?<a name="iot-tg-whatis-get-started"></a>
 
-You can build your own models by using the built\-in model editor in the AWS IoT Things Graph console\. 
+Explore existing devices and device models in the AWS IoT Things Graph console to see if the ones you want to use in your flows are available\. If the ones you want aren't available, you can build your own models by using the built\-in model editor in the AWS IoT Things Graph console\. 
 
-After you define the models and mappings, you define flows by chaining together models and web services\. Then you deploy the flow\. 
+You define flows by chaining together models and web services\. Then you deploy the flow\. 
 
-For examples that demonstrate how this works, see [Getting Started with AWS IoT Things Graph\.](iot-tg-gs.html)
+Fore more information about how a flow works, see [How a Flow Works](iot-tg-whatis-howitworks.html)\. For examples that demonstrate how this works, see [Getting Started with AWS IoT Things Graph\.](iot-tg-gs.html)
