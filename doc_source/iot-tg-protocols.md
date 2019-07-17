@@ -2,7 +2,7 @@
 
 --------
 
-# Communication Protocols<a name="iot-tg-protocols"></a>
+# Modeling by Device Communication Protocol<a name="iot-tg-protocols"></a>
 
 AWS IoT Things Graph supports the MQTT and Modbus protocols for device communication in a flow\. The protocol that the device uses affects the way you define the device\. 
 

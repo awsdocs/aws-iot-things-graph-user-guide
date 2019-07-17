@@ -2,7 +2,7 @@
 
 --------
 
-# Creating a Flow with Devices<a name="iot-tg-gs-thing-sample"></a>
+# Creating a Flow in an AWS IoT Greengrass Group with Devices<a name="iot-tg-gs-thing-sample"></a>
 
 This topic walks you through the steps to create and deploy a simple workflow \(flow\) that consists of a Raspberry Pi connected to three devices: an [Aukru HC\-SR501 motion sensor](https://www.amazon.com/Aukru-Pyroelectricity-Raspberry-Microcontrollers-Electronic/dp/B019SX734A), a [Raspberry Pi camera](https://www.amazon.com/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS), and a [Raspberry Pi screen](https://www.amazon.com/Raspberry-Pi-7-Touchscreen-Display/dp/B0153R2A9I)\.
 
@@ -80,7 +80,7 @@ If you're creating this example with *real devices*, skip ahead to [Create and D
 
    If you haven't created and activated certificates for your things, follow the steps in [Create and Activate a Device Certificate](https://docs.aws.amazon.com/iot/latest/developerguide/create-device-certificate.html)\.
 
-## Create and Deploy the Flow<a name="iot-tg-gs-thing-sample-deploy"></a>
+## Create and Publish the Flow<a name="iot-tg-gs-thing-sample-publish"></a>
 
 To create this flow with the AWS CLI instead of the AWS IoT Things Graph console, follow the instructions in [Creating a Flow with Devices by Using the AWS CLI](iot-tg-gs-thing-sample-deploy-cli.html)\.
 
@@ -136,9 +136,9 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
    Choose **Publish** at the upper right of the page\. This creates the flow and adds it to the list of flows that can be deployed\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowPublish.png)
 
-1. Associate things to device models\.
+## Associate Things to Device Models<a name="iot-tg-gs-thing-sample-associate"></a>
 
-   Select the menu icon at the upper left of the page\. Choose **Things**\.   
+1. Select the menu icon at the upper left of the page\. Choose **Things**\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGThingsMenu.png)
 
    On the **Things** page, choose the motion sensor thing that you created earlier\. Then choose **Associate**\.  
@@ -148,6 +148,8 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGSelectDevice.png)
 
 1. After you return to the **Select device model** page, refresh the page to verify that the motion sensor thing is associate with the HCSR501MotionSensor device\. Repeat the previous two steps for the `RaspberryPiCamera` and `RaspberryPiScreen` devices\.
+
+## Create and Deploy the Flow Configuration<a name="iot-tg-gs-thing-sample-deploy"></a>
 
 1. Create the flow configuration\.
 
@@ -224,7 +226,7 @@ Follow these steps to run all three Python scripts and observe the mock devices 
    After the script starts running, it displays the following output every 10 seconds\. This indicates that the mock motion sensor has detected motion\.
 
    ```
-   Published topic TG_MS/motion: {"isMotionDetected": true}
+   Published topic motion sensor thing name/motion: {"isMotionDetected": true}
    ```
 
 1. In the second terminal, navigate to the `camera` directory\. Run the `camera.py` script by using the following command\.
@@ -236,10 +238,10 @@ Follow these steps to run all three Python scripts and observe the mock devices 
    After the script starts running, it displays the following output every 10 seconds\. This indicates that the motion sensor trigger has prompted the mock camera to capture an image and publish it to the `/capture/finished` MQTT topic\.
 
    ```
-   Received message on topic TG_Camera/capture: {}
+   Received message on topic camera thing name/capture: {}
    
    2019-02-11 21:37:33,430 - AWSIoTPythonSDK.core.protocol.mqtt_core - INFO - Performing sync publish...
-   Published topic TG_Camera/capture/finished: {"lastClickedImage": "https://images-na.ssl-images-amazon.com/images/I/41+K4pC74XL._AC_US218_.jpg"}
+   Published topic camera thing name/capture/finished: {"lastClickedImage": "https://images-na.ssl-images-amazon.com/images/I/41+K4pC74XL._AC_US218_.jpg"}
    ```
 
 1. In the third terminal, navigate to the `screen` directory\. Run the `screen.py` script by using the following command\.
@@ -251,5 +253,9 @@ Follow these steps to run all three Python scripts and observe the mock devices 
    After the script starts running, it displays the following output every 10 seconds\. This indicates that the mock screen has received the image from the mock camera\.
 
    ```
-   Received message on topic TG_Screen/display: {"imageUri":"https://images-na.ssl-images-amazon.com/images/I/51rMLSWgwRL._AC_US218_.jpg"}
+   Received message on topic screen thing name/display: {"imageUri":"https://images-na.ssl-images-amazon.com/images/I/51rMLSWgwRL._AC_US218_.jpg"}
    ```
+
+## Delete the Flow and Flow Configuration \(Optional\)<a name="iot-tg-gs-thing-sample-cleanup"></a>
+
+For instructions on how to undeploy a flow configuration, and delete the flow configuration and flow that you've created, see [Deleting Flow Configurations](iot-tg-lifecycle.html#iot-tg-lifecycle-deletingflowconfig) and [Deleting Systems, Flows, and Namespaces](iot-tg-lifecycle.html#iot-tg-lifecycle-deletingsysflow) in [Lifecycle Management for AWS IoT Things Graph Entities, Flows, Systems, and Deployments](iot-tg-lifecycle.html)\.

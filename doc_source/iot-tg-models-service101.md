@@ -77,7 +77,7 @@ type RekognitionCap @capabilityType(id: "urn:tdm:aws/examples:capability:Rekogni
 
 ### Define the Service Model<a name="iot-tg-models-service101-aws-service"></a>
 
-At this point you have the pieces you need to create the full service model\. Your service model implements the `RekognitionCap` capability that you just created\. We've already seen the pieces of the service model that set the header and body parameters of the HTTP request to the REST service\. You just need to put all of the pieces together and make sure that the appropriate parameters are passed to the device action\.
+At this point you have the pieces you need to create the full service model\. Your service model implements the `RekognitionCap` capability that you just created\. You enable interaction with the service by specifying `REST` as the communication protocol inside the service definition\. We've already seen the pieces of the service model that set the header and body parameters of the HTTP request to the REST service\. You just need to put all of the pieces together and make sure that the appropriate parameters are passed to the device action\.
 
 ```
  query Rekognition @service(id:"urn:tdm:aws/examples:service:Rekognition") {
@@ -200,6 +200,8 @@ type getS3Capability @capabilityType(id: "urn:tdm:aws/examples:capability:getS3C
 ### Define the Service Model<a name="iot-tg-models-service101-lambda-service"></a>
 
 At this point you have the pieces you need to create the full service model\. Your service model implements the `getS3Capability` capability that you just created\. We've already seen the parts of the service model that send the `bucket` and `key` values to the service\. You just need to put everything together and ensure that the appropriate parameters are passed to the service action\. 
+
+You enable interaction with the Lambda function by specifying `AwsLambda` as the communication protocol inside the service definition\. If your Lambda function runs in a AWS IoT Greengrass group, specify `InvokeGreengrassLambda` inside the `Action` block\. If your Lambda function runs in the cloud, specify `InvokeCloudLambda` instead\.
 
 ```
 query getS3Lambda @service(id: "urn:tdm:aws/examples:Service:getS3Lambda") {

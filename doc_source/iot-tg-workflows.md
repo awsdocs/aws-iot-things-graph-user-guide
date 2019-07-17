@@ -2,7 +2,7 @@
 
 --------
 
-# Working with Flows<a name="iot-tg-workflows"></a>
+# Creating and Deploying Flows<a name="iot-tg-workflows"></a>
 
 After you successfully model and upload the entities that compose your workflows \(flows\), you can create, deploy, and work with them\. For more information about creating and managing the entities in a flow, see [Modeling Entities](iot-tg-modelmanagement.html)\. 
 

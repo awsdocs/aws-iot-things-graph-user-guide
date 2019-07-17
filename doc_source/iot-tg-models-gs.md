@@ -10,7 +10,7 @@ Creating entities for a flow involves three main tasks: defining the entities \(
 
 The following GraphQL contains a complete definition of entities that compose the flow described in [Working with Flows](iot-tg-workflows.html)\. \(For an overview of how GraphQL is used in the Things Graph Data Model \(TDM\), see [AWS IoT Things Graph Data Model and GraphQL](iot-tg-models-tdm-graphql.html)\.
 
-These definitions create a barcode reader and another device that logs the reader output, with all of the TDM entities that compose the devices\.
+These definitions create a barcode reader and another device that does something with the reader output, with all of the TDM entities that compose the devices\.
 
 ```
 {

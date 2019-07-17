@@ -51,7 +51,7 @@ On the **Greengrass** tab in the [AWS IoT console](https://console.aws.amazon.co
 
 For general information about AWS IoT concepts, see [What is AWS IoT?](https://docs.aws.amazon.com/iot/latest/developerguide//what-is-iot.html)
 
-## Create and Deploy the Flow<a name="iot-tg-gs-thingdev-sample-deploy"></a>
+## Create and Publish the Flow<a name="iot-tg-gs-thingdev-sample-publish"></a>
 
 To create this flow with the AWS CLI instead of the AWS IoT Things Graph console, follow the instructions in [Creating a Flow with Devices and a Service by Using the AWS CLI](iot-tg-gs-thingdev-sample-deploy-cli.html)\.
 
@@ -132,6 +132,8 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
    Choose **Publish** at the upper right of the page\. This creates the flow and adds it to the list of flows that can be deployed\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowPublish.png)
 
+## Asscoiate Things to Device Models<a name="iot-tg-gs-thingdev-sample-associate"></a>
+
 1. Associate things to device models\.
 
    Select the menu icon at the upper left of the page\. Then choose **Things**\.   
@@ -144,6 +146,8 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGSelectDevice.png)
 
 1. After you return to the **Select device model** page, refresh the page to verify that the motion sensor thing is associate with the HCSR501MotionSensor device\. Repeat the previous two steps for the `RaspberryPiCameraRkgnExample` and `RaspberryPiScreen` devices\.
+
+## Create and Deploy the Flow Configuration<a name="iot-tg-gs-thingdev-sample-deploy"></a>
 
 1. Create the flow configuration\.
 
@@ -190,3 +194,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 ## Run the Flow<a name="iot-tg-gs-thingdev-sample-run"></a>
 
 Because the screen doesn't use information returned by the Amazon Rekognition service model, the steps for running this flow are the same as those in [Creating a Flow with Devices](iot-tg-gs-thing-sample.html#iot-tg-gs-thing-sample-runreal)\. 
+
+## Delete the Flow and Flow Configuration \(Optional\)<a name="iot-tg-gs-thingdev-sample-cleanup"></a>
+
+For instructions on how to undeploy a flow configuration, and delete the flow configuration and flow that you've created, see [Deleting Flow Configurations](iot-tg-lifecycle.html#iot-tg-lifecycle-deletingflowconfig) and [Deleting Systems, Flows, and Namespaces](iot-tg-lifecycle.html#iot-tg-lifecycle-deletingsysflow) in [Lifecycle Management for AWS IoT Things Graph Entities, Flows, Systems, and Deployments](iot-tg-lifecycle.html)\.

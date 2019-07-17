@@ -2,7 +2,7 @@
 
 --------
 
-# Creating a Flow with Devices Using the Console<a name="iot-tg-gs-thing-sample-cloud"></a>
+# Creating a Flow in the Cloud with Devices<a name="iot-tg-gs-thing-sample-cloud"></a>
 
 This topic walks you through the steps to create and deploy a simple workflow \(flow\) that consists of three mock devices running in the cloud: a motion sensor, a camera, and a screen\. The mock devices pretend to be devices running on a Raspberry Pi\.
 
@@ -43,7 +43,7 @@ To run the workflow \(flow\) with mock devices, you need to copy the Python scri
 
    If you haven't created and activated certificates for your things, follow the steps in [Create and Activate a Device Certificate](https://docs.aws.amazon.com/iot/latest/developerguide/create-device-certificate.html)\.
 
-## Create and Deploy the Flow<a name="iot-tg-gs-thing-sample-cloud-deploy"></a>
+## Create and Publish the Flow<a name="iot-tg-gs-thing-sample-cloud-publish"></a>
 
 To create this flow with the AWS CLI instead of the AWS IoT Things Graph console, follow the instructions in [Creating a Flow with Devices by Using the AWS CLI](iot-tg-gs-thing-sample-deploy-cli.html)\.
 
@@ -99,9 +99,9 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
    Choose **Publish** at the upper right of the page\. This creates the flow and adds it to the list of flows that can be deployed\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowPublish.png)
 
-1. Associate things to device models\.
+## Associate Things to Device Models<a name="iot-tg-gs-thing-sample-cloud-associate"></a>
 
-   Select the menu icon at the upper left of the page\. Choose **Things**\.   
+1. Select the menu icon at the upper left of the page\. Choose **Things**\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGThingsMenu.png)
 
    On the **Things** page, choose the motion sensor thing that you created earlier\. Then choose **Associate**\.  
@@ -111,6 +111,8 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGSelectDevice.png)
 
 1. After you return to the **Select device model** page, refresh the page to verify that the motion sensor thing is associated with the HCSR501MotionSensor device\. Repeat the previous two steps for the `RaspberryPiCamera` and `RaspberryPiScreen` devices\.
+
+## Create and Deploy the Flow Configuration<a name="iot-tg-gs-thing-sample-cloud-deploy"></a>
 
 1. Create the flow configuration\.
 
@@ -206,3 +208,7 @@ Follow these steps to run all three Python scripts and observe the mock devices 
    ```
    Received message on topic TG_Screen/display: {"imageUri":"https://images-na.ssl-images-amazon.com/images/I/51rMLSWgwRL._AC_US218_.jpg"}
    ```
+
+## Delete the Flow and Flow Configuration \(Optional\)<a name="iot-tg-gs-thing-sample-cloud-cleanup"></a>
+
+For instructions on how to undeploy a flow configuration, and delete the flow configuration and flow that you've created, see [Deleting Flow Configurations](iot-tg-lifecycle.html#iot-tg-lifecycle-deletingflowconfig) and [Deleting Systems, Flows, and Namespaces](iot-tg-lifecycle.html#iot-tg-lifecycle-deletingsysflow) in [Lifecycle Management for AWS IoT Things Graph Entities, Flows, Systems, and Deployments](iot-tg-lifecycle.html)\.

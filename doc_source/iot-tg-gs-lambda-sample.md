@@ -53,7 +53,7 @@ The sample won't work if you use any other function names\.
 
    To do this, follow the instructions in [Configure the Lambda Function for AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/latest/developerguide/config-lambda.html)\.
 
-## Create and Deploy the Flow<a name="iot-tg-gs-lambda-sample-proc"></a>
+## Create and Publish the Flow<a name="iot-tg-gs-lambda-sample-publish"></a>
 
 To create this flow with the AWS CLI instead of the AWS IoT Things Graph console, follow the instructions in [Creating a Flow with Lambda Functions by Using the AWS CLI](iot-tg-gs-lambda-sample-deploy-cli.html)\.
 
@@ -116,9 +116,9 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
    Choose **Publish** at the upper right of the page\. This creates the flow and adds it to the list of flows that can be deployed\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGLambdaPublish.png)
 
-1. Start creating the flow configuration\.
+## Create and Deploy the Flow Configuration<a name="iot-tg-gs-lambda-sample-deploy"></a>
 
-   On the **Flows** list page, select the box next to the flow that you just created, and then choose **Create flow configuration**\.  
+1. On the **Flows** list page, select the box next to the flow that you just created, and then choose **Create flow configuration**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGLambdaCreateDeploy.png)
 
 1. Name the flow configuration\.
@@ -159,3 +159,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 ## Run the Flow<a name="iot-tg-gs-lambda-sample-run"></a>
 
 After a flow is deployed, it runs automatically every 60 seconds\. You can verify that it's running by going to your Amazon S3 bucket\. You should see a new file named `word-count-response` in the bucket\.
+
+## Delete the Flow and Flow Configuration \(Optional\)<a name="iot-tg-gs-lambda-sample-cleanup"></a>
+
+For instructions on how to undeploy a flow configuration, and delete the flow configuration and flow that you've created, see [Deleting Flow Configurations](iot-tg-lifecycle.html#iot-tg-lifecycle-deletingflowconfig) and [Deleting Systems, Flows, and Namespaces](iot-tg-lifecycle.html#iot-tg-lifecycle-deletingsysflow) in [Lifecycle Management for AWS IoT Things Graph Entities, Flows, Systems, and Deployments](iot-tg-lifecycle.html)\.

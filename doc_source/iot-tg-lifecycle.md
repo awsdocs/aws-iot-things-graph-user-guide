@@ -64,7 +64,7 @@ The [DeleteFlowTemplate](https://docs.aws.amazon.com/thingsgraph/latest/APIRefer
 
 To delete a namespace, use the [DeleteNamespace](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/API_DeleteNamespace.html) API\. Before you delete the namespace, you must delete all systems and flows that use entities in the namespace\.
 
-## Deleting Flow Configurations<a name="iot-tg-lifecycle-deletingsysflow"></a>
+## Deleting Flow Configurations<a name="iot-tg-lifecycle-deletingflowconfig"></a>
 
 Deleting a deployment configuration requires two steps\.
 

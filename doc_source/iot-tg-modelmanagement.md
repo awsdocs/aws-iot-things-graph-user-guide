@@ -13,8 +13,9 @@ After you create these entities in TDM, you upload them to your namespace by usi
 For complete example device models and services, see [Example Device and Service Definitions](iot-tg-examples.html)\.
 
 **Topics**
-+ [Creating and Uploading Entities](iot-tg-models-gs.md)
-+ [Versioning and Entity Modeling](iot-tg-models-manage.md)
++ [Modeling by Device Communication Protocol](iot-tg-protocols.md)
 + [Modbus Device Modeling 101](iot-tg-models-mod101.md)
 + [Service Modeling 101](iot-tg-models-service101.md)
++ [Creating and Uploading Entities](iot-tg-models-gs.md)
++ [Versioning and Entity Modeling](iot-tg-models-manage.md)
 + [Viewing Models and Things in the AWS IoT Things Graph Console](iot-tg-models-console.md)

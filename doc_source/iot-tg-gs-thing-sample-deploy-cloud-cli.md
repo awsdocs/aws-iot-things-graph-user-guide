@@ -128,3 +128,7 @@ The following steps describe how to create and deploy the flow by using the AWS 
    ```
 
 1. To verify the deployment, follow the steps in [Run the Flow with Mock Devices](iot-tg-gs-thing-sample-cloud.md#iot-tg-gs-thing-sample-cloud-runmock)\.
+
+## Delete the Flow and Flow Configuration \(Optional\)<a name="iot-tg-gs-thingdev-sample-cleanup"></a>
+
+For instructions on how to undeploy a flow configuration, and delete the flow configuration and flow that you've created, see [Deleting Flow Configurations](iot-tg-lifecycle.html#iot-tg-lifecycle-deletingflowconfig) and [Deleting Systems, Flows, and Namespaces](iot-tg-lifecycle.html#iot-tg-lifecycle-deletingsysflow) in [Lifecycle Management for AWS IoT Things Graph Entities, Flows, Systems, and Deployments](iot-tg-lifecycle.html)\.

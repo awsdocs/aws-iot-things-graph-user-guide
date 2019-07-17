@@ -24,7 +24,7 @@ AWS IoT Things Graph offers a visual drag\-and\-drop flow design interface that 
 
 The AWS IoT Things Graph console contains prebuilt models for commonly used devices, such as cameras and motion sensors, and web services, such as Amazon Rekognition and AWS Lambda\. Application builders can also use AWS IoT Things Graph to create their own models for their devices\. After you build an application, you can deploy your it to the AWS Cloud to orchestrate interactions between web services and devices connected to the AWS IoT cloud\. You can also deploy it to an AWS IoT Greengrass\-enabled device to orchestrate interactions between locally connected devices and web services\.
 
-## Model, Mapping, and Flow<a name="iot-tg-whatis-concepts"></a>
+## Model, Flow, and Mapping<a name="iot-tg-whatis-concepts"></a>
 
 There are three key concepts in AWS IoT Things Graph: **model**, **mapping**, and **flow**\.
 
@@ -58,7 +58,7 @@ The model library contains models that AWS IoT Things Graph has made publicly av
 
 ### Step 2: Create the Flow Configuration<a name="iot-tg-what-is-works-step2"></a>
 
-On the following pages that appear, you'll configure the deployment target and map things in your registry\.
+On the following pages that appear, you'll configure the deployment target \(cloud or Greengrass\) and map things in your registry to the devices in your flow\.
 
 #### Configure the Target<a name="iot-tg-what-is-works-step2a"></a>
 
@@ -94,4 +94,4 @@ Explore existing devices and device models in the AWS IoT Things Graph console t
 
 You define flows by chaining together models and web services\. Then you deploy the flow\. 
 
-Fore more information about how a flow works, see [How a Flow Works](iot-tg-whatis-howitworks.html)\. For examples that demonstrate how this works, see [Getting Started with AWS IoT Things Graph\.](iot-tg-gs.html)
+For more information about how a flow works, see [How a Flow Works](iot-tg-whatis-howitworks.html)\. For examples that demonstrate how this works, see [Getting Started with AWS IoT Things Graph\.](iot-tg-gs.html)
