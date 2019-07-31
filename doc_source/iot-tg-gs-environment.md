@@ -13,7 +13,7 @@ Before you get started, make sure that you have an [AWS account](http://aws.amaz
 **Note**  
 For information about using AWS CloudFormation to create and manage AWS IoT Greengrass groups and resources, see [AWS IoT Greengrass Resource Types Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-reference-greengrass.html)\.
 
-To perform the tasks related to setting up your AWS IoT Greengrass core, you need a Mac, Windows, or Linux or Unix system\. The setup instructions in [Getting Started with AWS IoT Greengrass]() recommend that you start with a Raspberry Pi\.
+To perform the tasks related to setting up your AWS IoT Greengrass core, you need a Mac, Windows, or Linux or Unix system\. The setup instructions in [Getting Started with AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-gs.html) recommend that you start with a Raspberry Pi\.
 
 1. Download and install the AWS IoT Greengrass core software\.
 

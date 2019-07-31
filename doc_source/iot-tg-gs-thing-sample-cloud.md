@@ -41,7 +41,7 @@ To run the workflow \(flow\) with mock devices, you need to copy the Python scri
 
 1. Copy the certificate and private key for each of the three things that you created into the appropriate directory on your Linux environment\. Also copy the root certificate authority \(CA\) for AWS IoT into each directory\. For example, the motion sensor certificate and private key should be in the `ms` directory, with the root CA for AWS IoT and the `cloudms.py` file\.
 
-   If you haven't created and activated certificates for your things, follow the steps in [Create and Activate a Device Certificate](https://docs.aws.amazon.com/iot/latest/developerguide/create-device-certificate.html)\.
+   If you haven't created and activated certificates for your things, follow the steps in [Register a Device in the Registry](https://docs.aws.amazon.com/iot/latest/developerguide/register-device.html)\. Make sure to attach a policy to each certificate\.
 
 ## Create and Publish the Flow<a name="iot-tg-gs-thing-sample-cloud-publish"></a>
 

@@ -161,7 +161,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Configure the target\.
 
-   On the **Configure target page**, enter the name of your Amazon S3 bucket and the AWS IoT Greengrass group to which your AWS IoT Greengrass core device belongs\. Choose **Next**\.   
+   On the **Configure target page**, enter the name of your Amazon S3 bucket and the AWS IoT Greengrass group to which your AWS IoT Greengrass core device belongs\. Amazon S3 buckets are globally unique, so your bucket name will be different from the one in the following screen shot\. Choose **Next**\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGRekDeploymentDetails2.png)
 
 1. Select things for your deployment\.

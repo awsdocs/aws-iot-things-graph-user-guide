@@ -2,7 +2,7 @@
 
 --------
 
-# Lifecycle Management for AWS IoT Things Graph Entities, Flows, Systems, and Deployments<a name="iot-tg-lifecycle"></a>
+# Managing Lifecycles for AWS IoT Things Graph Entities, Flows, Systems, and Deployments<a name="iot-tg-lifecycle"></a>
 
 This topic contains information about how to manage namespace versions and revisions of workflows \(flows\) and systems\. 
 

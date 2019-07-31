@@ -9,8 +9,8 @@ AWS IoT Things Graph enables interaction through the Modbus protocol by specifyi
 This topic describes how to model a Modbus device in GraphQL\. It also describes the types of Modbus interactions that the Things Data Model \(TDM\) currently supports, and the data transformations that occur when data types are modeled using the [AWS IoT Greengrass Modbus\-RTU Protocol Adapter](https://docs.aws.amazon.com/greengrass/latest/developerguide/modbus-protocol-adapter-connector.html)\.
 
 **Prerequisites**
-+ Version 1 of the [AWS IoT Greengrass Modbus\-RTU Protocol Adapter](https://docs.aws.amazon.com/greengrass/latest/developerguide/modbus-protocol-adapter-connector.html)
-+ Modbus devices registered with credentials in the AWS IoT things registry
++ Version 1 of the [AWS IoT Greengrass Modbus\-RTU Protocol Adapter](https://docs.aws.amazon.com/greengrass/latest/developerguide/modbus-protocol-adapter-connector.html)\.
++ Modbus devices registered with credentials in the AWS IoT things registry\.
 
   For instructions on how to create things in the registry, see [Register a Device in the Registry](https://docs.aws.amazon.com/iot/latest/developerguide/register-device.html)\.
 **Note**  
@@ -81,9 +81,9 @@ The following GraphQL shows how to define a device \(a sprinkler\) that uses the
 ```
 
 **Key elements:**
-+ **The `serverId` argument passed to the `Modbus` protocol block\.** The value of this argument specifies the Modbus endpoint ID to which AWS IoT Things Graph sends messages\.
-+ **Implementations of the device's `State` and `Actions`\.** Modbus defines no event protocol for messages to be sent to the master, so the device definition contains no `Event` implementations\.
-+ **Modbus request and response operations\.** Operations such as `WriteSingleCoil`, `ReadHoldingRegisters`, and `WriteSingleRegister` map precisely to the operations in the [AWS IoT Greengrass Modbus\-RTU Protocol Adapter](https://docs.aws.amazon.com/greengrass/latest/developerguide/modbus-protocol-adapter-connector.html)\.
++ **The `serverId` argument passed to the `Modbus` protocol block** \- The value of this argument specifies the Modbus endpoint ID to which AWS IoT Things Graph sends messages\.
++ **Implementations of the device's `State` and `Actions`** \- Modbus defines no event protocol for messages to be sent to the master, so the device definition contains no `Event` implementations\.
++ **Modbus request and response operations** \- Operations such as `WriteSingleCoil`, `ReadHoldingRegisters`, and `WriteSingleRegister` map precisely to the operations in the [AWS IoT Greengrass Modbus\-RTU Protocol Adapter](https://docs.aws.amazon.com/greengrass/latest/developerguide/modbus-protocol-adapter-connector.html)\.
 
 ## Interaction Flow<a name="iot-tg-protocols-modbus-interaction"></a>
 
@@ -111,8 +111,8 @@ The following tables describe the expected behavior when AWS IoT Things Graph se
 | TDM data type | Modbus serialization | Example TDM data | Example Modbus registers | 
 | --- | --- | --- | --- | 
 | Boolean or list of Boolean values |  Writes **0x01** to each register where Boolean is true, and **0x00** where Boolean is false\.  |  true \[true, true, false\]  |  \[0x0001\] \[0x0001, 0x0001, 0x0000\]  | 
-| Int8 and UInt8 values |  Writes integers two\-per\-register\. If there is an odd number of integers \(including one integer\), the value is written to MSB \(most significant byte\)\.  |  \(Int8\)1 \[\(int8\)3, \(int8\)5, \(int8\)4\] \[\(UInt8\)14, \(UInt8\)7\]  |  \[0x1000\] \[0x0305\]\[0x04000\] \[0xD700\]  | 
-|  Int16 and UInt16 values  |  Writes integers one\-per\-register\.  |  \[\(Int16\)17, \(Int16\)1\]  |  \[0x0010\]\[0x0001\]  | 
+| Int8 and UInt8 values |  Writes integers, two per register\. If there is an odd number of integers \(including one integer\), the value is written to MSB \(most significant byte\)\.  |  \(Int8\)1 \[\(int8\)3, \(int8\)5, \(int8\)4\] \[\(UInt8\)14, \(UInt8\)7\]  |  \[0x1000\] \[0x0305\]\[0x04000\] \[0xD700\]  | 
+|  Int16 and UInt16 values  |  Writes integers, one per register\.  |  \[\(Int16\)17, \(Int16\)1\]  |  \[0x0010\]\[0x0001\]  | 
 |  Int32 and UInt32 values  |  Writes one integer per two registers\. MSB is written first\.  |  \[0x00123400, 0x00F0\]  |  \[0x0012\]\[0x3400\]\[0x0000\]\[0x00F0\]  | 
 |  Int64 and UInt64 values  |  Writes one integer per four registers\. MSB is written first\.  |  0x11223344  |  \[0x0000\]\[0x0000\]\[0x1122\]\[0x3344\]  | 
 |  Float32 values  |  Writes one float per two registers\.  |  \[3\.14159, 2\.71828\]  |  \[0x4049\]\[0x0FD0\]\[0x402D\]\[0xF84D\]  | 

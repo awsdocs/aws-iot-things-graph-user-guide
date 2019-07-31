@@ -8,6 +8,8 @@ This topic describes what you need to think about and plan for when you're creat
 
 We'll use a weather monitoring device as a reference point, but you can apply the process that this topic describes to any device that uses the Modbus communication protocol\. The weather monitoring device that we model here is the [Elsner P03 Weather Station](https://www.elsner-elektronik.de/shop/en/fileuploader/download/download/?d=1&file=custom%2Fupload%2F30146-30147_P033-Modbus_P033-Modbus-GPS_DataSheet2-0_EN_19Mar2018.pdf) \(be sure to read the specification's description\)\.
 
+The [Elsner\-Weather\-Station\.zip](samples/Elsner-Weather-Station.zip) file contains all of the GraphQL code discussed in this topic\.
+
 The Elsner P03 Weather Station measures conditions in the physical environment\. From the device's description in the [specification](https://www.elsner-elektronik.de/shop/en/fileuploader/download/download/?d=1&file=custom%2Fupload%2F30146-30147_P033-Modbus_P033-Modbus-GPS_DataSheet2-0_EN_19Mar2018.pdf), we know that this device performs the following functions:
 + Measures brightness, with sensors for east, south, and west
 + Recognizes twilight and dawn

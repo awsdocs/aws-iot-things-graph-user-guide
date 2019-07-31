@@ -6,7 +6,7 @@
 
 This section describes how to create and work with the entities that compose a workflow \(flow\) after you create them in the AWS IoT Things Graph Data Model \(TDM\)\. 
 
-Entities compose a workflow \(flow\)\. Entities include [Properties](iot-tg-models-tdm-propertytype.html), [States](iot-tg-models-tdm-iot-state.html), [Events](iot-tg-models-tdm-iot-event.html), [Actions](iot-tg-models-tdm-iot-action.html), [Capabilities](iot-tg-models-tdm-iot-capability.html), [Mappings](iot-tg-models-tdm-iot-mapping.html), [Devices](iot-tg-models-tdm-iot-device.html), and [Services](iot-tg-models-tdm-iot-service.html)\. 
+Entities include [Properties](iot-tg-models-tdm-propertytype.html), [States](iot-tg-models-tdm-iot-state.html), [Events](iot-tg-models-tdm-iot-event.html), [Actions](iot-tg-models-tdm-iot-action.html), [Capabilities](iot-tg-models-tdm-iot-capability.html), [Mappings](iot-tg-models-tdm-iot-mapping.html), [Devices](iot-tg-models-tdm-iot-device.html), and [Services](iot-tg-models-tdm-iot-service.html)\. 
 
 After you create these entities in TDM, you upload them to your namespace by using the `UploadEntityDefinitions` API\.
 

@@ -6,6 +6,8 @@
 
 This topic describes what you need to think about and plan for when you're creating models for the services that you want to include in your flows\. We use two example services, one that exposes a capability of the Amazon Rekognition service and another that implements an AWS Lambda function\. The approaches that this topic takes to modeling services can be applied to other AWS services and Lambda functions\.
 
+The [ServiceModels101\.zip](samples/ServiceModels101.zip) file contains all of the GraphQL code discussed in this topic\.
+
 **Note**  
 The Amazon Rekognition and `getS3Lambda` service models discussed in this topic are available in the [AWS IoT Things Graph console](https://console.aws.amazon.com/thingsgraph/home)\. The example in [Creating a Flow with Lambda Functions](iot-tg-gs-lambda-sample.html) uses the `getS3Lambda` service discussed here\. The example in [Creating a Flow with Devices and a Service](iot-tg-gs-thingdev-sample.html) uses the Amazon Rekognition service discussed in this topic\.
 
@@ -172,7 +174,7 @@ The `@actionType` directive assigns a URN value that uniquely identifies the new
 
 Complex properties are created as instances of states\. States, in turn, consist of the properties that you want to include in your complex property\. 
 
-You begin by creating a state that contains string and `Int32` values that represent the content of the Amazon S3 object, as well as the length of the string\.
+You begin by creating a state that contains string and `Int32` values that represent the content of the Amazon S3 object and the length of the string\.
 
 ```
 type S3ObjectDocument @stateType(id : "urn:tdm:aws/examples:State:S3ObjectDocument") {

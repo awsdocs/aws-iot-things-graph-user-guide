@@ -4,13 +4,21 @@
 
 # Creating and Uploading Entities<a name="iot-tg-models-gs"></a>
 
-Creating entities for a flow involves three main tasks: defining the entities \(including the devices\) in the flow, uploading the entities to your private namespace, and associating things in your registry with the devices that you've defined and uploaded\. This topic describes how to complete these tasks by using either the AWS CLI or the AWS IoT Things Graph console\.
+Creating entities for a flow involves three main tasks:
++ Defining the entities \(including the devices\) in the flow\.
++ Uploading the entities to your private namespace\.
++ Associating things in your registry with the devices that you've defined and uploaded\.
+
+This topic describes how to complete these tasks by using either the AWS CLI or the AWS IoT Things Graph console\.
 
 ## Step 1\. Define the Entities<a name="iot-tg-models-gs-step1"></a>
 
 The following GraphQL contains a complete definition of entities that compose the flow described in [Working with Flows](iot-tg-workflows.html)\. \(For an overview of how GraphQL is used in the Things Graph Data Model \(TDM\), see [AWS IoT Things Graph Data Model and GraphQL](iot-tg-models-tdm-graphql.html)\.
 
 These definitions create a barcode reader and another device that does something with the reader output, with all of the TDM entities that compose the devices\.
+
+**Note**  
+Before uploading your models, you must wrap all of your definitions between opening and closing curly braces, as in the following example\.
 
 ```
 {
@@ -110,11 +118,11 @@ These definitions create a barcode reader and another device that does something
 }
 ```
 
-These models create the properties, states, actions, and capabilities, as well as the two devices that contain these other entities\.
+These models create the properties, states, actions, and capabilities, and the two devices that contain these other entities\.
 
 ## Step 2\. Upload the Entity Definitions<a name="iot-tg-models-gs-step2"></a>
 
-After you have finished writing the entity definitions that compose your flow, you upload the definitions to your private namespace\. You can do this in two ways, by using the `UploadEntityDefinitions` API or by using the AWS IoT Things Graph console\. 
+After you have finished writing the entity definitions that compose your flow, you upload the definitions to your private namespace\. You can do this in two ways, by using the `UploadEntityDefinitions` API and the CLI or by using the AWS IoT Things Graph console\. 
 
 ### Upload the Entity Definition \(CLI\)<a name="iot-tg-models-gs-cli"></a>
 

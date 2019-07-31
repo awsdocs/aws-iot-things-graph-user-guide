@@ -12,4 +12,4 @@ AWS IoT Things Graph supports the following protocols:
 + [MQTT](iot-tg-protocols-mqtt.html)
 + [Modbus](iot-tg-protocols-modbus.html)
 
-For information about defining services that use HTTP \(REST\) and AWS Lambda functions, see [Service](iot-tg-models-tdm-iot-service.html) in the [Things Data Model \(TDM\) reference](iot-tg-models.html)\.
+For information about defining services that use HTTP \(REST\) and AWS Lambda functions, see [Service](iot-tg-models-tdm-iot-service.html) in the [AWS IoT Things Graph Data Model Reference](iot-tg-models.html)\.

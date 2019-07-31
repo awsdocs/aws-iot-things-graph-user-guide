@@ -38,10 +38,10 @@ The following GraphQL shows how to define a device \(a camera\) that uses the MQ
 ```
 
 **Key elements:**
-+ **Implementations of the device's `State` and `Action`\.** A device implementation can also implement a device `Event`\.
-+ **The `Publish` block inside the `Action` implementation\.** This block contains the `Request` and `Response` definitions\.
-+ **The `Request` definition\.** This definition specifies the MQTT request topic and the parameters, if any, that are sent to it\. 
-+ **The `Response` definition\.** This optional definition specifies the MQTT response topic \(if one exists\) and the payload that is sent to it\.
++ **Implementations of the device's `State` and `Action`** \- A device implementation can also implement a device `Event`\.
++ **The `Publish` block inside the `Action` implementation** \- This block contains the `Request` and `Response` definitions\.
++ **The `Request` definition** \- This definition specifies the MQTT request topic and the parameters, if any, that are sent to it\. 
++ **The `Response` definition** \- This optional definition specifies the MQTT response topic \(if one exists\) and the payload that is sent to it\.
 
 The following GraphQL defines another GraphQL device \(a motion sensor\)\. This example implements a device `Event` that contains a `Subscribe` block\. This block specifies the MQTT topic to which the motion sensor subscribes\.
 
