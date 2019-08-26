@@ -17,7 +17,9 @@ The Elsner P03 Weather Station measures conditions in the physical environment\.
 + Measures temperature
 + Recognizes the presence of precipitation
 
-When you define a device, you need to create two pieces\. The first piece is the abstract device model\. This piece generically defines what a type of device does\. The second piece is the device definition, which implements the model\. Before you define your device, look in the [AWS IoT Things Graph console](https://console.aws.amazon.com/thingsgraph/home) to determine whether an abstract model for the type of device you're defining already exists\. If so, you can skip to the task of defining your device\.
+When you define a device, you need to create two pieces\. The first piece is the abstract device model\. This piece generically defines what a type of device does\. The second piece is the device definition, which implements the model\. The device definition specifies the communication protocol used by the device\. Devices that use different protocols can inherit from the same device model\.
+
+Before you define your device, look in the [AWS IoT Things Graph console](https://console.aws.amazon.com/thingsgraph/home) to determine whether an abstract model for the type of device you're defining already exists\. If so, you can skip to the task of defining your device\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGDeviceModeling.png)
 

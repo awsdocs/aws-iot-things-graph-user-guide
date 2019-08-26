@@ -2,11 +2,21 @@
 
 --------
 
-# Security for AWS IoT Greengrass Deployments<a name="iot-tg-security"></a>
+# Security in AWS IoT Things Graph<a name="iot-tg-security"></a>
 
-AWS IoT Things Graph is deployed to AWS IoT Greengrass, and it stores flow configurations in Amazon Simple Storage Service\. This topic describes the security implications of this architecture and the security features directly related to AWS IoT Things Graph\.
+Security at AWS is the highest priority\. As an AWS customer, you benefit from a data center and network architecture that is built to meet the requirements of the most security\-sensitive organizations\.
 
-## Control Plane<a name="iot-tg-security-control"></a>
+This documentation helps you understand how to apply the shared responsibility model when using AWS IoT Things Graph\. The following sections show you how to configure AWS IoT Things Graph to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your AWS IoT Things Graph resources\. 
+
+## Data Protection in AWS IoT Things Graph<a name="iot-tg-security-dataprotection"></a>
+
+In both cloud and AWS IoT Greengrass deployments, AWS IoT Things Graph protects data at rest through server\-side encryption\. AWS IoT Things Graph protects data in transit by using the Transport Layer Security \(TLS\) protocol\.
+
+## Security in AWS IoT Greengrass Deployments<a name="iot-tg-security-gg"></a>
+
+When AWS IoT Things Graph is deployed to AWS IoT Greengrass, it stores flow configurations in Amazon Simple Storage Service \(Amazon S3\)\. This topic describes the security implications of this architecture and the security features directly related to AWS IoT Things Graph\.
+
+### Control Plane<a name="iot-tg-security-control"></a>
 
 The AWS IoT Things Graph control plane uses IAM policies to define what a user can do\. You can create policies that assign permissions for every available action in the [AWS IoT Things Graph API](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/API_Operations.html)\. 
 
@@ -91,7 +101,7 @@ Entities stored in an account's namespace are available to all users in an accou
 
 Because you deploy AWS IoT Things Graph to AWS IoT Greengrass, you need to set up AWS IoT Greengrass security by following the steps in [Configuring Greengrass Security](https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-sec.html#gg-config-sec) in the *AWS IoT Greengrass Developer Guide*\. When you deploy a workflow, you provide AWS IoT Things Graph with an IAM service role\. This role should contain all of the policies required for AWS IoT Things Graph to publish and subscribe to all of the MQTT topics that are used in the workflow\. For more information about IAM roles, see [Using IAM Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html)\.
 
-## Data Plane<a name="iot-tg-security-data"></a>
+### Data Plane<a name="iot-tg-security-data"></a>
 
 AWS IoT Things Graph runs as an AWS Lambda function on the AWS IoT Greengrass core device\. When new workflows are deployed to AWS IoT Greengrass, AWS IoT Things Graph creates entries in the subscription table for communication between the devices in the workflow and the AWS IoT Things Graph Lambda function\. 
 

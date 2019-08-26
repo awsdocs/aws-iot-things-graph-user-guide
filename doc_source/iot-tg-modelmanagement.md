@@ -14,6 +14,7 @@ For complete example device models and services, see [Example Device and Service
 
 **Topics**
 + [Modeling by Device Communication Protocol](iot-tg-protocols.md)
++ [MQTT Device Modeling 101](iot-tg-models-mqtt101.md)
 + [Modbus Device Modeling 101](iot-tg-models-mod101.md)
 + [Service Modeling 101](iot-tg-models-service101.md)
 + [Creating and Uploading Entities](iot-tg-models-gs.md)
