@@ -40,11 +40,11 @@ AWS IoT Things Graph creates a new version of your namespace when you make a bac
 
 You can update existing entities by using either the AWS IoT Things Graph console or the [UploadEntityDefinitions](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/API_UploadEntityDefinitions.html) API\. The [UploadEntityDefinitions](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/API_UploadEntityDefinitions.html) API has two optional Boolean parameters that enable you to perform the other two actions:
 + `syncWithPublicNamespace`
-+ `deleteExistingEntites `
++ `deprecateExistingEntities`
 
 After the `UploadEntityDefinitions` operation completes, there is a short delay before the entities are available in flows\. When you're writing tests and scripted solutions, take this delay into account\.
 
-When you create a flow, by default AWS IoT Things Graph uses entities in the current version of your namespace\. When you deploy a flow, by default AWS IoT Things Graph validates it against the current version of your namespace\. This means that if you attempt to deploy a flow that contains entities that are incompatible with the current namespace, by default the deployment fails\. 
+When you create a flow, by default AWS IoT Things Graph uses entities in the current version of your namespace\. When you deploy a flow, by default AWS IoT Things Graph validates it against the current version of your namespace\. This means that if you attempt to deploy a flow that contains entities that are incompatible with the current namespace, by default the deployment fails\. A flow that contains deprecated entities also fails\.
 
 To specify an earlier namespace that contains entities that are compatible with a flow, use the optional `compatibleNamespaceVersion` parameter of the [CreateFlowTemplate](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/API_CreateFlowTemplate.html) API\. If you create the flow with this parameter, AWS IoT Things Graph validates your flow against the version value that you set with this parameter when you deploy the flow\. The [CreateSystemTemplate](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/API_CreateSystemTemplate.html) also has this optional parameter, so ensure that your system and flow are using the same namespace version when you deploy them\.
 
@@ -62,7 +62,7 @@ The [DeprecateFlowTemplate](https://docs.aws.amazon.com/thingsgraph/latest/APIRe
 
 The [DeleteFlowTemplate](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/API_DeleteFlowTemplate.html) and [DeleteSystemTemplate](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/API_DeleteSystemTemplate.html) APIs enable you to delete a flow or system that is deprecated\. After you delete a flow, any system that contains the flow no longer updates or deploys\. After you delete a system, any deployment configuration that contains the system no longer updates or deploys\. Existing deployments that contain the flow continue to run because they use a snapshot of the workflow that's taken at the time of deployment\. The same is true for deployments that contain deleted systems\. You must delete all flows in a system before you delete the system\.
 
-To delete a namespace, use the [DeleteNamespace](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/API_DeleteNamespace.html) API\. Before you delete the namespace, you must delete all systems and flows that use entities in the namespace\.
+To delete a namespace, use the [DeleteNamespace](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/API_DeleteNamespace.html) API\. Before you delete the namespace, you must delete all systems, flows, and flow configurations that use entities in the namespace\. Existing flow deployments continue to work after you delete a namespace\. AWS IoT Things Graph creates a snapshot of the flow, flow configuration, system, and entities for each deployment\.
 
 ## Deleting Flow Configurations<a name="iot-tg-lifecycle-deletingflowconfig"></a>
 

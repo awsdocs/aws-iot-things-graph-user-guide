@@ -4,7 +4,7 @@
 
 # Logging AWS IoT Things Graph API Calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
 
-AWS IoT Things Graph is integrated with AWS CloudTrail\. The CloudTrail service provides a record of actions that a user, role, or an AWS service takes in AWS IoT Things Graph\. CloudTrail captures all API calls for AWS IoT Things Graph as events\. Captured calls include those from the AWS IoT Things Graph console, and code calls to the AWS IoT Things Graph API operations\. 
+AWS IoT Things Graph is integrated with AWS CloudTrail\. The CloudTrail service provides a record of actions that a user, role, or an AWS service takes in AWS IoT Things Graph\. CloudTrail captures all API calls for AWS IoT Things Graph as events\. Captured calls include those from the AWS IoT Things Graph console and code calls to the AWS IoT Things Graph API operations\. 
 
 If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for AWS IoT Things Graph\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. 
 
@@ -25,7 +25,7 @@ You can also configure other AWS services to further analyze and act on the even
 + [Receiving CloudTrail Log Files from Multiple Regions](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html)
 + [Receiving CloudTrail Log Files from Multiple Accounts](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html)
 
-CloudTrail logs all AWS IoT Things Graph actions\. They're documented in the [AWS IoT Things Graph API Reference](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/)\. For example, calls to the  `UploadEntityDefinitions`, `CreateSystemInstance` and `CreateFlowTemplate` actions generate entries in the CloudTrail log files\. 
+CloudTrail logs all AWS IoT Things Graph actions\. They're documented in the [AWS IoT Things Graph API Reference](https://docs.aws.amazon.com/thingsgraph/latest/APIReference/)\. For example, calls to the `UploadEntityDefinitions`, `CreateSystemInstance` and `CreateFlowTemplate` actions generate entries in the CloudTrail log files\. 
 
 Every event or log entry contains information about who generated the request\. The identity information helps you determine the following: 
 + Whether the request was made with root or AWS Identity and Access Management \(IAM\) user credentials\.
@@ -42,11 +42,11 @@ CloudTrail log files contain one or more log entries\. An event represents a sin
 
 CloudTrail log files aren't an ordered stack trace of the public API calls, so they don't appear in any specific order\. 
 
-The following example shows a CloudTrail log entry that demonstrates the `UploadEntityDefinitions`  action\.
+**Example**  
+The following CloudTrail log entry shows information about the `UploadEntityDefinitions` action\.  
 
 ```
-      
-        {
+{
       "eventVersion": "1.05",
       "userIdentity": {
         "type": "IAMUser",

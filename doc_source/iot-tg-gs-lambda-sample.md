@@ -27,7 +27,7 @@ You must create the AWS IoT Greengrass group and Amazon S3 bucket in the same AW
 ## Create an AWS IoT Greengrass Group<a name="iot-tg-gs-lambda-sample-gg"></a>
 
 **Note**  
-For information about using AWS CloudFormation to create and manage AWS IoT Greengrass groups and resources, see [AWS IoT Greengrass Resource Types Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-reference-greengrass.html)\.
+For information about using AWS CloudFormation to create and manage AWS IoT Greengrass groups and resources, see [AWS IoT Greengrass Resource Types Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/AWS_Greengrass.html)\.
 
 Perform the steps in [Setting Up Your Environment](iot-tg-gs-environment.html)\. Make sure that you've created an IAM role for AWS IoT Greengrass \(step 4 in the **Create an AWS IoT Greengrass Group** procedure in that topic\)\. Attach the `AmazonS3FullAccess` policy to give it access to your S3 bucket\.
 
@@ -64,8 +64,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Create a flow\.
 
-   In the **Flow configuration** pane, enter a name for your flow\. Choose **Create flow**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowConfig.png)
+   In the **Flow configuration** pane that appears, enter a name for your flow\. Choose **Create flow**\.
 
 1. Add the service models to the flow\.
 
@@ -81,8 +80,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Update the **ClockTrigger**\.
 
-   In the trigger editor that appears in the right pane, for **Frequency**, enter **60**, and then select **seconds** from the menu on the right\. For **Action**, choose **ThingsGraph\.startFlow**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGLambdasTimeTrigger.png)
+   In the trigger editor that appears in the right pane, for **Frequency**, enter **60**, and then select **seconds** from the menu on the right\. For **Action**, choose **ThingsGraph\.startFlow**\.
 
 1. Add the `getS3Lambda` service model action\.
 
@@ -90,15 +88,13 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
    1. Expand **Inputs**\. Choose **Define Input**, and then enter the names of your Amazon S3 bucket and file as the values for **bucket** and **key**\. 
 
-   1. Expand **Output**, and then enter **getS3LambdaResult**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGLambdaActivity.png)
+   1. Expand **Output**, and then enter **getS3LambdaResult**\.
 
 1. Add the `wordCountLambda` service model action\.
 
    1. In the flow designer, select the **`wordCountLambda`** service model\. In the action editor that appears in the right pane, choose **No action configured**\. For **Action** box, choose **`wordCount`**\. Expand **Inputs**, choose **Define Input**, and then for **message**, enter **$\{getS3LambdaResult\.message\}**\.
 
-   1. Expand **Output**, and then enter **wordCountLambdaResult**\.   
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGLambdaActivity2.png)
+   1. Expand **Output**, and then enter **wordCountLambdaResult**\. 
 
 1. Add the `saveResponseLambda` service model action\.
 
@@ -108,13 +104,11 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
    1. For **Action**, choose **save**\.
 
-   1. Expand **Inputs**, choose **Define Input**, and then for **response**, enter **$\{wordCountLambdaResult\}**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGLambdaActivity3.png)
+   1. Expand **Inputs**, choose **Define Input**, and then for **response**, enter **$\{wordCountLambdaResult\}**\.
 
 1. Publish the flow\.
 
-   Choose **Publish** at the upper right of the page\. This creates the flow and adds it to the list of flows that can be deployed\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGLambdaPublish.png)
+   Choose **Publish** at the upper right of the page\. This creates the flow and adds it to the list of flows that can be deployed\.
 
 ## Create and Deploy the Flow Configuration<a name="iot-tg-gs-lambda-sample-deploy"></a>
 
@@ -123,8 +117,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Name the flow configuration\.
 
-   On the **Describe flow configuration** page, select your flow and enter a flow configuration name\. The flow configuration name can't contain spaces\. Choose **Greengrass**, and then choose **Next**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGLamDeploymentDetails.png)
+   On the **Describe flow configuration** page, select your flow and enter a flow configuration name\. The flow configuration name can't contain spaces\. Choose **Greengrass**, and then choose **Next**\.
 
 1. Configure the target\.
 
@@ -133,8 +126,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Select things\.
 
-   This example contains only service models, so you don't have to select any things to use in the flow\. Choose **Next**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGLamAssociateThings.png)
+   This example contains only service models, so you don't have to select any things to use in the flow\. Choose **Next**\.
 
 1. View the trigger\.
 
@@ -145,16 +137,13 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Review and create\.
 
-   On the **Review and create** page, review the information you entered for your flow configuration\. Choose **Create**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGLambdaDeploy.png)
+   On the **Review and create** page, review the information you entered for your flow configuration\. Choose **Create**\.
 
 1. Deploy\.
 
-   When the **Flow configuration created** message appears, choose **Deploy now**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGDeploymentCreated.png)
+   When the **Flow configuration created** message appears, choose **Deploy now**\.
 
-   Refresh the **Deployments** page to verify that the flow has deployed\. After a successful deployment, the **Deployments** page displays **Deployed in target** in the **Status** column\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGDeploySuccess.png)
+   Refresh the **Deployments** page to verify that the flow has deployed\. After a successful deployment, the **Deployments** page displays **Deployed in target** in the **Status** column\.
 
 ## Run the Flow<a name="iot-tg-gs-lambda-sample-run"></a>
 

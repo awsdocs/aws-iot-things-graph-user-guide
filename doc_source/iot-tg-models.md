@@ -13,3 +13,9 @@ Additionally, the TDM framework enables IoT automation engineers to build workfl
 TDM consists of a set of core constructs, including and most importantly `PropertyTypes`\. TDM also consists of a set of specialized constructs that support IoT\-specific constructs, including `State`, `Device`, and `Capability`\.
 
 The following sections describe both the core and the IoT\-specific concepts of TDM\. They also describe how to use GraphQL syntax to create and extend TDM constructs\.
+
+**Topics**
++ [What Is the AWS IoT Things Graph Data Model?](iot-tg-whatis-tdm.md)
++ [AWS IoT Things Graph Data Model and GraphQL](iot-tg-models-tdm-graphql.md)
++ [AWS IoT Things Graph Data Model Core Constructs](iot-tg-models-tdm-core.md)
++ [IoT Domain Constructs](iot-tg-models-tdm-iot.md)

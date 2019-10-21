@@ -32,7 +32,7 @@ Now you've configured your Raspberry Pi to communicate with the motion sensor, c
 ## Create an AWS IoT Greengrass Group<a name="iot-tg-gs-thingdev-sample-gg"></a>
 
 **Note**  
-For information about using AWS CloudFormation to create and manage AWS IoT Greengrass groups and resources, see [AWS IoT Greengrass Resource Types Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-reference-greengrass.html)\.
+For information about using AWS CloudFormation to create and manage AWS IoT Greengrass groups and resources, see [AWS IoT Greengrass Resource Types Reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/AWS_Greengrass.html)\.
 
 Install AWS IoT Greengrass on the same Raspberry Pi to which you attached your motion sensor, camera, and screen\. 
 
@@ -62,8 +62,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Create a flow\.
 
-   In the **Flow configuration** pane, name your flow \(such as **RekognitionFlow**\)\. Choose **Create flow**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGRekognitionCreateFlow.png)
+   In the **Flow configuration** pane that appears, name your flow \(such as **RekognitionFlow**\)\. Choose **Create flow**\.
 
 1. Add the device models and service model to the flow\.
 
@@ -83,8 +82,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Update the motion sensor trigger\.
 
-   In the trigger editor that appears in the right pane, for **Condition**, choose **StateChanged**\. For **Action**, choose **ThingsGraph\.startFlow**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGRekognitionTrigger.png)
+   In the trigger editor that appears in the right pane, for **Condition**, choose **StateChanged**\. For **Action**, choose **ThingsGraph\.startFlow**\.
 
 1. Update the camera device model action\.
 
@@ -94,8 +92,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
    1. For **Action**, choose **capture**\.
 
-   1. Expand **Output**, and then enter **cameraRkgnExampleResult**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGRekognitionActivity.png)
+   1. Expand **Output**, and then enter **cameraRkgnExampleResult**\.
 
 1. Update the **Rekognition** service model activity\.
 
@@ -111,8 +108,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
    1. For **itemName**, enter **$\{cameraRkgnExampleResult\.s3ItemName\}**\.
 
-   1. Expand **Output**, and then enter **rekognitionResult**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGRekognitionActivity2.png)
+   1. Expand **Output**, and then enter **rekognitionResult**\.
 
 1. Update the screen device model activity\.
 
@@ -124,13 +120,11 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
    1. Expand **Inputs**, and then choose **Define Input**\.
 
-   1. For **imageUrl**, enter **$\{cameraRkgnExampleResult\.lastClickedImage\}**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGRekognitionActivity3.png)
+   1. For **imageUrl**, enter **$\{cameraRkgnExampleResult\.lastClickedImage\}**\.
 
 1. Publish the flow\.
 
-   Choose **Publish** at the upper right of the page\. This creates the flow and adds it to the list of flows that can be deployed\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowPublish.png)
+   Choose **Publish** at the upper right of the page\. This creates the flow and adds it to the list of flows that can be deployed\.
 
 ## Asscoiate Things to Device Models<a name="iot-tg-gs-thingdev-sample-associate"></a>
 
@@ -139,7 +133,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
    Select the menu icon at the upper left of the page\. Then choose **Things**\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGThingsMenu.png)
 
-   On the **Things** page, select the motion sensor thing that you created earlier\. Then choose **Associate**\.  
+   On the **Things** page, select the motion sensor thing that you created earlier\. Then choose **Associate with device**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGAssociateThingDevice.png)
 
 1. On the **Select device model** page, choose **HCSR501MotionSensor**\. Choose **Associate**\. This step associates the HCSR501MotionSensor motion sensor thing in your registry with the motion sensor device model in your flow\. The HCSR501MotionSensor device implements the capability of the motion sensor device model\.  
@@ -156,8 +150,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Name the flow configuration\.
 
-   On the **Describe flow configuration** page, select your flow, and then enter a flow configuration name\. The flow configuration name can't contain spaces\. Choose **Greengrass**, and then choose **Next**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGRekDeploymentDetails.png)
+   On the **Describe flow configuration** page, select your flow, and then enter a flow configuration name\. The flow configuration name can't contain spaces\. Choose **Greengrass**, and then choose **Next**\.
 
 1. Configure the target\.
 
@@ -168,8 +161,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
    The **Map Things** page provides an interface for selecting the specific things that you'll include in your deployment\. The menus under each device model in your deployment contain all of the things that you associated with the device model\. Because you're getting started, the menus for each device model on this page will include only one thing \(the thing that you've associated with each device model\)\.
 
-   On the **Map Things** page, for **motionSensor**, select the motion sensor thing that you created earlier\. Select the camera and screen things for the **Camera** and **Screen** device models\. Choose **Next**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGRekSelectThings.png)
+   On the **Map Things** page, for **motionSensor**, select the motion sensor thing that you created earlier\. Select the camera and screen things for the **Camera** and **Screen** device models\. Choose **Next**\.
 
 1. View the trigger\.
 
@@ -180,16 +172,13 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Review and create\.
 
-   On the **Review and create** page, review the information you entered for your flow configuration\. Choose **Create**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGReviewDeployment.png)
+   On the **Review and create** page, review the information you entered for your flow configuration\. Choose **Create**\.
 
 1. Deploy\.
 
-   When the **Flow configuration created** message appears, choose **Deploy now**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGDeploymentCreated.png)
+   When the **Flow configuration created** message appears, choose **Deploy now**\.
 
-   Refresh the **Deployments** page to verify that the flow has deployed\. After a successful deployment, the **Deployments** page displays **Deployed in target** in the **Status** column\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGDeploySuccess.png)
+   Refresh the **Deployments** page to verify that the flow has deployed\. After a successful deployment, the **Deployments** page displays **Deployed in target** in the **Status** column\.
 
 ## Run the Flow<a name="iot-tg-gs-thingdev-sample-run"></a>
 

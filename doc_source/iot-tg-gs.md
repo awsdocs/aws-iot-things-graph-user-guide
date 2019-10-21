@@ -11,4 +11,4 @@ When you work with AWS IoT Things Graph, you must deploy the service and all ass
 **Topics**
 + [Getting Started with AWS IoT Things Graph in the Cloud](iot-tg-gs-cloud.md)
 + [Getting Started with AWS IoT Things Graph in AWS IoT Greengrass](iot-tg-gs-greengrass.md)
-+ [Using the Mock Devices](iot-tg-gs-mockdevices.md)
++ [Using the Example Mock Devices](iot-tg-gs-mockdevices.md)

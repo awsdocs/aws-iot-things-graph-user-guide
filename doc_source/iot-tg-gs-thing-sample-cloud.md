@@ -52,8 +52,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Create a flow\.
 
-   In the **Flow configuration** pane, name your flow \(such as **SecurityFlow**\)\. Choose **Create flow**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowConfig2.png)
+   In the **Flow configuration** pane that appears, name your flow \(such as **SecurityFlow**\)\. Choose **Create flow**\.
 
 1. Add the device models to the flow\.
 
@@ -67,8 +66,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Update the motion sensor trigger\.
 
-   In the trigger editor that appears in the right pane, for **Condition**, choose **StateChanged**\. For **Action**, choose **ThingsGraph\.startFlow**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGConsoleTrigger.png)
+   In the trigger editor that appears in the right pane, for **Condition**, choose **StateChanged**\. For **Action**, choose **ThingsGraph\.startFlow**\.
 
 1. Update the camera device action\.
 
@@ -78,8 +76,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
    1. For **Action**, choose **capture**\.
 
-   1. Expand **Output**, and then enter **cameraResult**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGDeviceActivity.png)
+   1. Expand **Output**, and then enter **cameraResult**\.
 
 1. Update the screen device model action\.
 
@@ -91,20 +88,18 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
    1. Expand **Inputs**, and then choose **Define Input**\.
 
-   1. For **Inputs**, enter **$\{cameraResult\.lastClickedImage\}**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGDeviceActivity2.png)
+   1. For **Inputs**, enter **$\{cameraResult\.lastClickedImage\}**\.
 
 1. Publish the flow\.
 
-   Choose **Publish** at the upper right of the page\. This creates the flow and adds it to the list of flows that can be deployed\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowPublish.png)
+   Choose **Publish** at the upper right of the page\. This creates the flow and adds it to the list of flows that can be deployed\.
 
 ## Associate Things to Device Models<a name="iot-tg-gs-thing-sample-cloud-associate"></a>
 
 1. Select the menu icon at the upper left of the page\. Choose **Things**\.   
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGThingsMenu.png)
 
-   On the **Things** page, choose the motion sensor thing that you created earlier\. Then choose **Associate**\.  
+   On the **Things** page, choose the motion sensor thing that you created earlier\. Then choose **Associate with device**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGAssociateThingDevice.png)
 
 1. On the **Select device model** page, choose **HCSR501MotionSensor**\. Choose **Associate**\. This step associates the HCSR501MotionSensor motion sensor thing in your registry with the motion sensor device model in your flow\. The HCSR501MotionSensor device implements the capability of the motion sensor device model\.  
@@ -123,8 +118,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
    A flow configuration contains the details that are specific to a single deployment\. On the **Describe flow configuration** page, select your flow and enter a flow configuration name\. The flow configuration name can't contain spaces\. 
 
-   Choose **Cloud**, and then choose **Next**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGCloudDeploymentDetails.png)
+   Choose **Cloud**, and then choose **Next**\.
 
 1. Configure the target\.
 
@@ -135,8 +129,7 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
    The **Map Things** page provides an interface for selecting the specific things to include in your deployment\. The menus under each device model in your deployment contain all of the things that you associated with the device model\. Because you're getting started, the menus for each device on this page will include only one thing \(the thing that you've associated with each device model\)\.
 
-   On the **Map Things** page, from the menu under the **motionSensor** device model, select the motion sensor thing that you created earlier\. Select the camera and screen things for the **Camera** and **Screen** device models\. Choose **Next**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGAssociateThings.png)
+   On the **Map Things** page, from the menu under the **motionSensor** device model, select the motion sensor thing that you created earlier\. Select the camera and screen things for the **Camera** and **Screen** device models\. Choose **Next**\.
 
 1. View the trigger\.
 
@@ -147,14 +140,11 @@ To create this flow with the AWS CLI instead of the AWS IoT Things Graph console
 
 1. Review and create\.
 
-   On the **Review and create** page, review the information you entered for your flow configuration\. Then choose **Create**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGReviewDeployment.png)
+   On the **Review and create** page, review the information you entered for your flow configuration\. Then choose **Create**\.
 
-   When the **Flow configuration created** message appears, choose **Deploy now**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGDeploymentCreated.png)
+   When the **Flow configuration created** message appears, choose **Deploy now**\.
 
-   Refresh the **Deployments** page to verify that the flow has deployed\. After a successful deployment, the **Deployments** page displays **Deployed in target** in the **Status** column\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGDeploySuccess.png)
+   Refresh the **Deployments** page to verify that the flow has deployed\. After a successful deployment, the **Deployments** page displays **Deployed in target** in the **Status** column\.
 
 ## Run the Flow with Mock Devices<a name="iot-tg-gs-thing-sample-cloud-runmock"></a>
 

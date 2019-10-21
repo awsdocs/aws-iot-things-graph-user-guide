@@ -98,7 +98,9 @@ The choice node editor also enables you to create variables\. Steps later in the
 
 1. Configure the default event in the choice node\.
 
-   Expand **Default rule**\. This rule determines what happens when the output from the previous step is unexpected\. You can create new events and variables for this rule\. This example defaults to the `isNight` event\.  
+   Expand **Default rule**\. This rule determines what happens when the output from the previous step is unexpected\. You can create new events and variables for this rule\. This example defaults to the `isNight` event\.
+**Note**  
+The default event is required\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowCNDefaultRule.png)
 
 1. Name the events connected to each instance of the device\.
