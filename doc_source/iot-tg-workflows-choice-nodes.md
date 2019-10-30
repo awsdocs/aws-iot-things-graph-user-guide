@@ -18,7 +18,7 @@ This example is for demonstration purposes only\. You can apply the approach in 
 
 The instructions in this topic create the following flow\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGChoiceNodeFlow.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/things-graph-choice-node-flow.png)
 
 ## Create the Flow<a name="iot-tg-workflows-choice-nodes-flow"></a>
 
@@ -74,38 +74,36 @@ The following instructions describe how to configure the trigger logic, service 
 
    Expand **Rule A**\. Optionally, enter a title for the rule\.
 
-   Enter an [expression](iot-tg-models-tdm-expressions.html) that evaluates the output from the Lambda service\. In this example, the rule evaluates the current hour to determine whether the current hour is at night: `getHourResult.value > 14`\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowCNRuleA.png)
+   Enter an [expression](iot-tg-models-tdm-expressions.html) that evaluates the output from the Lambda service\. In this example, the rule evaluates the current hour to determine whether the current hour is at night: `${getHourResult > 14}`\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/things-graph-choice-node-ruleA.png)
 
 1. Configure the event for the first rule in the choice node\.
 
-   Choose **Add event**\. Enter an event name\. In this example, the rule creates an event named `isNight` whenever the expression in the condition evaluates to `true`\.
-**Note**  
-The choice node editor also enables you to create variables\. Steps later in the flow can use the values of these variables\. For example, a device might have a single on/off action that turns off a device at night and turns it on at daytime\. This kind of device can use the value of a Boolean variable \(for example, `isNight` or `isDay`\) to determine what its action does when it executes a single step in the flow\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowCNRuleAEvent.png)
+   Choose **Add event**\. Enter an event name\. In this example, the rule creates an event named `isNight` whenever the expression in the condition evaluates to `true`\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/things-graph-choice-node-ruleA-event.png)
 
 1. Configure the condition for the second rule in the choice node\.
 
    Choose **Add rule**\. Expand **Rule B**\. Optionally, enter a title for the rule\.
 
-   Enter an [expression](iot-tg-models-tdm-expressions.html) that evaluates the output from the Lambda service\. In this example, the rule evaluates the current hour to determine whether the current hour is in the daytime: `getHourResult.value <=13`\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowCNRuleB.png)
+   Enter an [expression](iot-tg-models-tdm-expressions.html) that evaluates the output from the Lambda service\. In this example, the rule evaluates the current hour to determine whether the current hour is in the daytime: `${getHourResult <= 13}`\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/things-graph-choice-node-ruleB.png)
 
-1. Configure the event for the first rule in the choice node\.
+1. Configure the event for the second rule in the choice node\.
 
    Choose **Add event**\. Enter an event name\. In this example, the rule creates an event named `isDay` whenever the expression in the condition evaluates to `true`\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowCNRuleBEvent.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/things-graph-choice-node-ruleB-event.png)
 
 1. Configure the default event in the choice node\.
 
    Expand **Default rule**\. This rule determines what happens when the output from the previous step is unexpected\. You can create new events and variables for this rule\. This example defaults to the `isNight` event\.
 **Note**  
 The default event is required\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowCNDefaultRule.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/things-graph-choice-node-defaultrule.png)
 
 1. Name the events connected to each instance of the device\.
 
-   Choose one of the events that follow the choice node\. Enter the name of one of events that you created in the choice node\. Choose the other event, and enter the name of the other choice node event\. When you start typing, the flow designer will prompt you to autocomplete the events that you created in the choice node\.  
+   Choose one of the events that follow the choice node\. Enter the name of one of events that you created in the choice node\. Choose the other event, and enter the name of the other choice node event\. When you start typing, the flow designer prompts you to autocomplete the events that you created in the choice node\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGFlowCNConnectEvents.png)
 
 1. Configure the device actions\.
@@ -113,6 +111,8 @@ The default event is required\.
    Select the device or device model that is connected to the `isNight` event\. Choose **No action configured**, and select the `turnOn` action\.
 
    Select the device or device model that is connected to the `isDay` event\. Choose **No action configured**, and select the `turnOff` action\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/TGChoiceNodeFlow.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/thingsgraph/latest/ug/images/things-graph-choice-node-flow.png)
 
-In this example, the same device executes one of two steps, depending on the events that are emitted by the choice node\. You can use choice nodes to execute more complex logic depending on the number of rules, the complexity of the expressions in the rules, and the number of variables that you create\.
+In this example, the same device executes one of two possible steps, depending on the events that are emitted by the choice node\. The same device can be used in multiple steps and perform different actions depending on the events emitted by the choice node\. You can use choice nodes to execute more complex logic depending on the number of rules, the complexity of the expressions in the rules, and the number of variables that you create\.
+
+For more information about expressions in choice nodes, see [Using Conditional Logic in Choice Nodes](iot-tg-workflows-choice-nodes-expressions.html)\.

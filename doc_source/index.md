@@ -54,6 +54,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Revising Flows](iot-tg-workflows-deploy.md)
    + [Adding Triggers to Flows](iot-tg-workflows-logic.md)
    + [Working with Choice Nodes](iot-tg-workflows-choice-nodes.md)
+      + [Using Conditional Logic in Choice Nodes](iot-tg-workflows-choice-nodes-expressions.md)
 + [Working with Systems and Flow Configurations](iot-tg-sysdeploy.md)
    + [Creating Systems](iot-tg-sysdeploy-systems.md)
    + [Creating Flow Configurations (AWS IoT Greengrass)](iot-tg-sysdeploy-depconfig.md)
