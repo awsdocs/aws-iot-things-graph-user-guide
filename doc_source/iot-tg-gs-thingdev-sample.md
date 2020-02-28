@@ -49,7 +49,7 @@ For instructions on how to create things in the registry, see [Register a Device
 
 On the **Greengrass** tab in the [AWS IoT console](https://console.aws.amazon.com/iot/home), choose your group, choose **Devices**, and then add the three new things to your AWS IoT Greengrass group\.
 
-For general information about AWS IoT concepts, see [What is AWS IoT?](https://docs.aws.amazon.com/iot/latest/developerguide//what-is-iot.html)
+For general information about AWS IoT concepts, see [What is AWS IoT?](https://docs.aws.amazon.com/iot/latest/developerguide/what-is-iot.html)
 
 ## Create and Publish the Flow<a name="iot-tg-gs-thingdev-sample-publish"></a>
 

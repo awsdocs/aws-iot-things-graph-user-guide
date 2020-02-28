@@ -25,7 +25,7 @@ Open the [AWS IoT console](https://console.aws.amazon.com/iot/home) and create t
 
 For instructions on how to create things in the registry, see [Register a Device in the Registry](https://docs.aws.amazon.com/iot/latest/developerguide/register-device.html)\. Be sure to create and activate certificates for each thing\.
 
-For more information about AWS IoT concepts, see [What is AWS IoT?](https://docs.aws.amazon.com/iot/latest/developerguide//what-is-iot.html)
+For more information about AWS IoT concepts, see [What is AWS IoT?](https://docs.aws.amazon.com/iot/latest/developerguide/what-is-iot.html)
 
 ## Set Up Your Mock Devices<a name="iot-tg-gs-thing-sample-cloud-mocksetup"></a>
 

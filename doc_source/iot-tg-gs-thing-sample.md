@@ -56,7 +56,7 @@ For instructions on how to create things in the registry, see [Register a Device
 
 In the [AWS IoT console](https://console.aws.amazon.com/iot/home), on the **Greengrass** tab, select your group, choose **Devices**, and then add the three new things to your AWS IoT Greengrass group\.
 
-For more information about AWS IoT concepts, see [What is AWS IoT?](https://docs.aws.amazon.com/iot/latest/developerguide//what-is-iot.html)
+For more information about AWS IoT concepts, see [What is AWS IoT?](https://docs.aws.amazon.com/iot/latest/developerguide/what-is-iot.html)
 
 ## Set Up Your Mock Devices<a name="iot-tg-gs-thing-sample-mocksetup"></a>
 
